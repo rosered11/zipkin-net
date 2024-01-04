@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <PackageId>Rosered.Zipkin.Net</PackageId>
+	  <Version>0.0.1</Version>
+	  <Authors>rosered</Authors>
+	  <PackageReadmeFile>Readme.md</PackageReadmeFile>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="zipkin4net" Version="1.5.0" />
+    <PackageReference Include="zipkin4net.middleware.aspnetcore" Version="1.5.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Readme.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+</Project>

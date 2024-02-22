@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <PackageId>Rosered.Zipkin.Net</PackageId>
-	  <Version>0.0.1</Version>
+	  <Version>1.0.0</Version>
 	  <Authors>rosered</Authors>
 	  <PackageReadmeFile>Readme.md</PackageReadmeFile>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -19,6 +19,6 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\Readme.md" Pack="true" PackagePath="\"/>
+		<None Include="..\..\Readme.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 </Project>

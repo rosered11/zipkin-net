@@ -64,13 +64,15 @@ public sealed class ZipkinServerTrace : ZipkinBaseTrace, IDisposable
 
 public sealed class ZipkinProducerTrace : ZipkinBaseTrace, IDisposable
 {
-    private const string eventTag = "eventName";
-    public ZipkinProducerTrace(Trace trace, string serviceName, string rpc, string eventName) : base(trace.Child())
+    private const string eventTag = "EventName";
+    private const string statusTag = "Status";
+    public ZipkinProducerTrace(Trace trace, string serviceName, string rpc, string eventName, string status) : base(trace.Child())
     {
         Trace.Record(Annotations.ProducerStart());
         Trace.Record(Annotations.ServiceName(serviceName));
         Trace.Record(Annotations.Rpc(rpc));
         Trace.Record(Annotations.Tag(eventTag, eventName));
+        Trace.Record(Annotations.Tag(statusTag, status));
     }
 
     public void Dispose()
@@ -81,13 +83,15 @@ public sealed class ZipkinProducerTrace : ZipkinBaseTrace, IDisposable
 
 public sealed class ZipkinConsumerTrace : ZipkinBaseTrace, IDisposable
 {
-    private const string eventTag = "eventName";
-    public ZipkinConsumerTrace(Trace trace, string serviceName, string rpc, string eventName) : base(trace.Child())
+    private const string eventTag = "EventName";
+    private const string statusTag = "Status";
+    public ZipkinConsumerTrace(Trace trace, string serviceName, string rpc, string eventName, string status) : base(trace.Child())
     {
         Trace.Record(Annotations.ConsumerStart());
         Trace.Record(Annotations.ServiceName(serviceName));
         Trace.Record(Annotations.Rpc(rpc));
         Trace.Record(Annotations.Tag(eventTag, eventName));
+        Trace.Record(Annotations.Tag(statusTag, status));
     }
 
     public void Dispose()
